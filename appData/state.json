@@ -1,0 +1,170 @@
+{
+	"type":  "drawlottary",
+	"name": "转盘",
+	"component": "TurntableWidgetComponent",
+	"icon": "iconfont icon-dazhuanpan",
+	"autoWidget": {
+    	"aliasName": "",
+		"source": "build:out",
+		"notStreching": false,
+		"notOperation": false,
+		"type": "drawlottary",
+		"content": {},
+		"style": {
+			"attr": {
+				"height": 375,
+				"width": 375,
+				"borderRadius": 0,
+				"padding": {
+					"top": 0,
+					"right": 0,
+					"bottom": 0,
+					"left": 0
+				},
+				"background": {
+				"type": "image",
+				"image": {
+					"url": "assets/image/default.png",
+					"repeat": "no-repeat",
+					"position": "",
+					"size": [375, 62]
+				},
+				"color": {
+					"value": "#000000",
+					"isGradient": true,
+					"gradient": {
+					"type": "linear",
+					"value": "linear-gradient(75deg, rgba(255,132,0, 0.5) 0%,rgb(255,0,130) 50%,#42B983 80%)",
+					"stop": [
+						["rgba(255,132,0, 0.5)", 0],
+						["#00FF00", 0.5]
+					],
+					"angle": 75,
+					"direction": "circle at center"
+					}
+				}
+				},
+				"opacity": 0.46,
+				"border": {
+				"style": "solid",
+				"width": 3,
+				"color": {
+					"value": "#000000",
+					"isGradient": true,
+					"gradient": {
+					"type": "linear",
+					"value": "linear-gradient(75deg, rgba(255,132,0, 0.5) 0%,rgb(255,0,130) 50%,#42B983 80%)",
+					"stop": [
+						["#FF0000", 0],
+						["#00FF00", 0.5],
+						["#0000FF", 0.8]
+					],
+					"angle": 75,
+					"direction": "circle at center"
+					}
+				}
+				},
+				"radius": {
+				"lt": 0,
+				"rt": 0,
+				"lb": 0,
+				"rb": 0
+				},
+				"shadow": {
+				"color": {
+					"value": "#000000",
+					"isGradient": true,
+					"gradient": {
+					"type": "linear",
+					"value": "linear-gradient(75deg, rgba(255,132,0, 0.5) 0%,rgb(255,0,130) 50%,#42B983 80%)",
+					"stop": [
+						["#FF0000", 0],
+						["#00FF00", 0.5],
+						["#0000FF", 0.8]
+					],
+					"angle": 75,
+					"direction": "circle at center"
+					}
+				},
+				"X": 0,
+				"Y": 0,
+				"blur": 0,
+				"spread": 0
+				}
+			},
+			"children": []
+		},
+		"attr": {
+			"turntabletype": "1",
+			"btntype": "color",
+			"btnName": "立即开奖",
+			"btnTextColor": "#f8e71c",
+			"btnBackgroundColor": "rgba(74, 74, 74, 0.78)",
+			"btnBackgroundImage": "",
+			"relationId": "",
+			"prizeOptionList": [
+				{
+					"prizeImg": "",
+					"prizeQuota": "奖品一",
+					"prizeName": "奖品一",
+					"background": "#9b9b9b",
+					"btntype": "color"
+					},
+					{
+					"prizeImg": "",
+					"prizeQuota": "奖品二",
+					"prizeName": "奖品二",
+					"background": "#9b9b9b",
+					"btntype": "color"
+					},
+					{
+					"prizeImg": "",
+					"prizeQuota": "奖品三",
+					"prizeName": "奖品三",
+					"background": "#9b9b9b",
+					"btntype": "color"
+					},
+					{
+					"prizeImg": "",
+					"prizeQuota": "奖品四",
+					"prizeName": "奖品四",
+					"background": "#9b9b9b",
+					"btntype": "color"
+					},
+					{
+					"prizeImg": "",
+					"prizeQuota": "奖品五",
+					"prizeName": "奖品五",
+					"background": "#9b9b9b",
+					"btntype": "color"
+					},
+					{
+					"prizeImg": "",
+					"prizeQuota": "奖品六",
+					"prizeName": "奖品六",
+					"background": "#9b9b9b",
+					"btntype": "color"
+					},
+					{
+					"prizeImg": "",
+					"prizeQuota": "奖品七",
+					"prizeName": "奖品七",
+					"background": "#9b9b9b",
+					"btntype": "color"
+					},
+					{
+					"prizeImg": "",
+					"prizeQuota": "奖品八",
+					"prizeName": "奖品八",
+					"background": "#9b9b9b",
+					"btntype": "color"
+				}
+			]
+		},
+		"customfeature": {
+			"eventParams": null,
+			"eventHandler": ""
+		},
+		"orientationmodel": {"width": 375, "height": 375 }
+	}
+}

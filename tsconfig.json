@@ -1,26 +1,38 @@
 {
   "compilerOptions": {
-  "declaration": true,
-  "esModuleInterop": true,
-  "strictNullChecks": true,
-  "moduleResolution": "node",
-  "declarationDir": "dist/dts",
-  "outDir": "dist/esmModule",
-  "importsNotUsedAsValues": "error",
-  "experimentalDecorators": true,
-  "noImplicitAny": false,
-  "strictPropertyInitialization": false,
-  "target": "es2015",
-  "module": "ESNext",
-  "types": [
+    "declaration": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "outDir": "esm",
+    "importsNotUsedAsValues": "error",
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "strictPropertyInitialization": false,
+    "target": "es2015",
+    "module": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "@shared": [ "shared" ],
+      "@shared/*": [ "shared/*" ],
+      "@utils": [ "_utils" ],
+      "@utils/*": [ "_utils/*" ],
+      "@assist": [ "assist" ],
+      "@assist/*": [ "assist/*" ],
+    },
+    "types": [
       "webpack-env",
       "web-ie11"
   ],
   "lib": [
-      "DOM",
-      "ES2015",
-      "ES2016.Array.Include"
-  ]
-},
-"include": ["examples/src"]
+    "DOM",
+    "es2017",
+    "ES2016.Array.Include"
+  ]},
+  "exclude": ["examples/src", "rollup.config.ts"],
+  "include": ["packages", "shared", "_utils", "assist"]
 }

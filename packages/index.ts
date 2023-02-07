@@ -1,1 +1,2 @@
-export * from "./button"
+import './view/view';
+import './edit/edit';

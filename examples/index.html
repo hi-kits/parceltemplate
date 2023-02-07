@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>hi-kit</title>
+        <title>parcel</title>
         <style>
             html,
             body {
@@ -18,10 +18,13 @@
     <!-- <script  src="./src/index.js"></script> -->
     <body>
         <!-- <h2>主题 <span>theme</span></h2> -->
-        <h2>按钮 <span>button</span></h2>
+        <h2>视图 <span>view</span></h2>
+        <div style="width: 375px; height: 375px">
+            <h-view id="hView"></h-view>
+        </div>
+        <h2>编辑项 <span>edit</span></h2>
         <div>
-            <p></p>
-            <h-button>33333</h-button>
+            <h-edit onchange="editChanged(event)"></h-edit>
         </div>
     </body>
 </html>

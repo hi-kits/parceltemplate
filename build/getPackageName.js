@@ -2,10 +2,11 @@
  * @Descripttion: 
  * @version: 
  * @Author: liulina
- * @Date: 2022-09-01 14:02:17
+ * @Date: 2023-02-06 17:20:37
  * @LastEditors: liulina
- * @LastEditTime: 2023-02-07 14:20:26
+ * @LastEditTime: 2023-02-24 20:03:37
  */
+
 const fs = require("fs");
 const path = require("path");
 
@@ -21,8 +22,8 @@ export function getPackagesInfoList(type, folderName, unHandleKey, callback) {
     const stats = fs.statSync(fullPath);
     // 如果是文件夹则需要存入到fileList中
     if (stats.isDirectory()) {
-      // 将文件夹的名称保存起来
-      fileList[file] = folderName + file + '/index.' + type + '.ts';
+      // 将文件夹的名称保存起来 ' + type + '.
+      fileList[file] = folderName + file + '/index.ts';
       
     }
     // 所有的文件遍历结束后，调用callback

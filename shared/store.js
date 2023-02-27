@@ -1,11 +1,3 @@
-/*
- * @Descripttion: 
- * @version: 
- * @Author: liulina
- * @Date: 2023-02-07 11:05:07
- * @LastEditors: liulina
- * @LastEditTime: 2023-02-07 17:16:20
- */
 function emptyAction() {  //设置一个actions实例
     // 提示当前使用的是空 Action
     console.warn("Current execute action is empty!");
@@ -48,5 +40,9 @@ class Actions {
     }
 }
 
-const actions = new Actions();
-export default actions;
+
+export const storMap = new Map();
+export const actions = () => {
+    const action = new Actions();
+    return action;
+};

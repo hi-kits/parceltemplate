@@ -11,9 +11,9 @@ import { HIElement, customElement, attr, html, when, ref, repeat, ExecutionConte
 import { DrawlotteryStyles as styles } from "./view.style";
 import { evalEventHandleUtil } from '@utils/evalEventHandle';
 import { Background } from '@utils/style/background';
+import { storMap } from '@shared/store';
 
 
-import actions from '@shared/store';
 // 模版文件
 const template = html<HiView>`
 <section class="LotteryWrap" ${ref("LotteryWrap")}>
@@ -54,14 +54,14 @@ export class HiView extends HIElement {
 
     // 初始化奖品项配置
     prizeIndexObject: Array<any> = [
-      {background: '#dee'},
-      {background: '#dee'},
-      {background: '#dee'},
-      {background: '#dee'},
-      {background: '#dee'},
-      {background: '#dee'},
-      {background: '#dee'},
-      {background: '#dee'}];
+      {background: '#9b9b9b'},
+      {background: '#9b9b9b'},
+      {background: '#9b9b9b'},
+      {background: '#9b9b9b'},
+      {background: '#9b9b9b'},
+      {background: '#9b9b9b'},
+      {background: '#9b9b9b'},
+      {background: '#9b9b9b'}];
   /**
      * 奖品排序
      * @date 9/8/2022 - 1:10:32 PM
@@ -120,6 +120,8 @@ export class HiView extends HIElement {
     
     // 这个是通过singleSpa传入的组件ID，用于关联视图和编辑组件
     @attr viewid: string;
+
+    parcelAction;
     // ------------------ 自定义函数 ------------------
     /**
      * 当自定义元素第一次被连接到文档DOM时被调用
@@ -127,8 +129,9 @@ export class HiView extends HIElement {
      */
     connectedCallback(): void{
       super.connectedCallback();
+      this.parcelAction = storMap.get(this.viewid);
       // 这是需要的，可视化框架传入的初始化数据
-      actions.onGlobalStateChange((state) => {
+      this.parcelAction.onGlobalStateChange((state) => {
         // 监听全局状态
         if (state.type === 'viewChange' && state.viewid === this.viewid) {
           this.lotteryTextObj = state.data

@@ -1,11 +1,4 @@
-/*
- * @Descripttion: 
- * @version: 
- * @Author: liulina
- * @Date: 2023-02-06 17:11:39
- * @LastEditors: liulina
- * @LastEditTime: 2023-02-07 15:17:56
- */
+
 /**
  * @const: DrawlotteryStyles
  * @version 0.0.1

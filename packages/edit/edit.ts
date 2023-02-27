@@ -10,10 +10,8 @@ import { HIElement, customElement, attr, html } from 'hi-element';
 
 // 样式文件
 import { DrawlotteryStyles as styles } from "./edit.style";
-import actions from '@shared/store';
+import { storMap } from '@shared/store';
 
-
-// import { HiDefaultPic } from '@currency/defaultPic';
 // 模版文件
 const template = html<HiEdit>`
   <p><span>样式</span> 九宫格 </p>
@@ -33,19 +31,18 @@ export class HiEdit extends HIElement {
     constructor() {
         super();
     }
+  parcelAction;
     // ------------------ 参数 ------------------
-  
   // 可视化中的模型数据
   public modalData;
   @attr viewid:string
   valueChange(event) {
-    console.log(event.target.value);
     if (!this.modalData) {
       this.modalData = {};
     }
     this.modalData['btnName'] = event.target.value;
     // 用于在可视化框架中的组件交互，通知视图做出改变
-    actions.setGlobalState({
+    this.parcelAction.setGlobalState({
       type: 'viewChange',
       viewid: this.viewid,
       data: {
@@ -55,12 +52,13 @@ export class HiEdit extends HIElement {
       attrData: this.modalData
     })
     // 用于本地测试，实际在examples中的交互，如果需要的话，放开下面的代码
-    // this.$emit('change', {attr: this.modalData})
+    this.$emit('change', {attr: this.modalData})
   }
   connectedCallback(): void {
     super.connectedCallback();
+    this.parcelAction = storMap.get(this.viewid);
     // 将可视化系统中的数据拿过来初始化组件数据
-    actions.onGlobalStateChange(state => {
+    this.parcelAction.onGlobalStateChange(state => {
       if (state.type === 'editInit' && state.viewid === this.viewid) {
         this.update(state.data)
         this.modalData = state.data;
